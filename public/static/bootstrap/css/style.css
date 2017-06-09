@@ -1,0 +1,749 @@
+@font-face {
+    font-family: NightWindSentSample;
+    src: url(../fonts/NightWindSentSample.ttf);
+}
+
+html {
+	background:  url("../../img/bg/bg1.jpg") no-repeat center center fixed ;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+
+body {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0;
+
+}
+
+#topbar {
+	margin: 0 auto;
+	position: fixed;
+	top: 0;
+	z-index: 10;
+	width: 100%;
+	height: 45px;	
+	background-color: #4BA5D9;
+	box-shadow: 0 3px 4px 0 rgba(0,0,0,0.15);
+}
+
+#topnavbar {
+	width: 920px;
+	height: 100%;
+	margin: 0 auto;
+	color: white;
+	font-size: 30px;
+	font-family: Helvetica Neue;
+}
+
+#envelope {
+
+	width: 920px;
+	height: 420px;
+	margin: 0 auto;
+	margin-top: 95px;
+	background-color: white;
+	background-size: cover;
+	/*box-shadow: 6px 8px 20px 2px #999;*/
+    border: 10px solid white;
+    -webkit-border-image: url(../../img/border.png) 10 round; /* Safari 3.1-5 */
+    -o-border-image: url(../../img/border.png) 10 round; /* Opera 11-12.1 */
+    border-image: url(../../img/border.png) 10 round;
+    /*overflow: hidden;*/
+    opacity: 0.96;
+    line-height: 23px;
+    -moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+input:disabled {
+	background: none;
+}
+
+#logo {
+
+}
+#logo img{
+	height: 100%;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 8px 0px;
+}
+
+#senderInfo {
+	position: absolute;
+	display: none;
+	font-family: NightWindSentSample, calibri;
+	font-size: 26px;
+	line-height: 30px;
+}
+
+#senderDateOrAddress {
+
+}
+
+#stamp {
+	width: 150px;
+	position: relative;
+	float: right;
+	margin-right: 15px;
+	/*display: none;*/
+}
+
+#phone {
+	width: 200px;
+	padding-top: 9px;
+	padding-left: 480px;
+}
+
+#navbar {
+	color: black;
+	padding-top: 15px;
+	padding-left: 10px;
+}
+
+#navbarMobile {
+	display: none;
+}
+
+#sendNav, #receiveNav {
+	cursor: pointer;
+	font-family: Helvetica Neue;
+	padding: 5px;
+	margin-left: 95px;
+	font-size: 20px;
+	text-align: center;
+	color: white;
+	font-size: 18px;
+	padding: 0px 12px 4px 12px;
+	/*border-radius: 6px;*/
+	height: inherit;
+	vertical-align: bottom;
+	cursor: pointer;
+	display: none;
+}
+
+.navButton {
+	margin-left: 5px;
+	float: right;
+	font-size: 18px;
+	font-family: Helvetica Neue;
+	padding: 11px 20px;
+	cursor: pointer;
+}
+
+#topReceiveNav {
+	/*background-color: #4BA5D9;*/
+	/*padding: 14px 10px;*/
+	border-bottom: white 2px solid;
+}
+
+#receiveNav {
+	opacity: 0.5;
+	color: #4BA5D9;
+	border-bottom: 1px solid transparent;
+}
+
+#sendNav {
+	opacity: 1;
+	color: #009633;
+	border-bottom: 1px solid #009633;
+}
+
+#text {
+	font-size: 30px;
+	font-family: calibri;
+	padding: 20px;
+}
+
+#faximg {
+	width: 100px;
+	position: absolute;
+	float: left;
+	margin-left: -140px;
+	margin-top: 400px;
+	opacity: .5;
+	display: none;
+}
+
+#close {
+	font-family: cursive;
+	font-size: 50px;
+	position: fixed;
+	float: left;
+	margin-top: 20px;
+	margin-left: 40px;
+	z-index: 10;
+	display: none;
+}
+
+#receive {
+	/*width: 100%;*/
+	margin: 0 auto;
+	margin-top: 120px;
+}
+
+.hoverForButtons:hover > #openButton, .hoverForButtons:hover > #resetButton, .hoverForButtons:hover > #editButton, .hoverForButtons:hover > #sendButton {
+	visibility: visible;
+} 
+
+#receiveKukucode {
+	text-transform: lowercase;
+	width: 400px;
+	height: 100px;
+	color: #4BA5D9;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	font-size: 25px;
+	font-family: Helvetica Neue;
+	text-align: center;
+	border-radius: 6px;
+	border: 1px solid transparent;
+	display: block;
+	background-color: #f5f8fa;
+}
+
+#receivePin {
+	border: none;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	font-size: 20px;
+	font-family: Helvetica Neue;
+	text-align: center;
+	display: none;
+	color: #4BA5D9;
+}
+
+
+#receivePin {
+	font-family: Helvetica Neue;
+}
+#address1, #address2, #name {
+	font-family: NightWindSentSample, calibri;
+	font-size: 30px;
+	width: 390px;
+	line-height: 30px;
+	padding-left: 10px;
+}
+
+#send {
+	margin-left: 10px;
+	display: none;
+	height: 350px;
+}
+
+#send div {
+	float: left;
+}
+
+input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+#send input[type="text"] {
+	color: black;
+	font-family: Helvetica Neue;
+	font-size: 16px;
+	line-height: 20px;
+	width: 300px;
+	border:none;
+	border-bottom: 1px solid #e6ecf0;
+	margin-bottom: 20px;
+	margin-top: 0px;
+	font-weight: 300;	
+	display: block;
+}
+
+#submitLetter {
+	display: none;
+}
+
+#recipientInputs {
+	margin-top: 170px;
+	margin-left: 180px;
+}
+
+#recipientDetails {
+	margin-top: 160px;
+}
+
+#letterInfo {
+	display: none;
+	margin-top: 100px;
+	position: absolute;
+}
+
+#uploadedFile {
+	display: none;
+}
+
+#uploadButton {
+	background: none;
+	text-align: left;
+	padding: 0;
+	color: black;
+	cursor: pointer;
+	float: left;
+}
+
+#codeAndFile {
+	
+}
+
+#checkButton, #continueButton, #openButton, #resetButton, #editButton, #sendButton {
+	font-family: Helvetica Neue;
+	font-size: 15px;
+	padding: 4px 12px;
+	border: none;
+	border-radius: 6px;
+	color: #4BA5D9;
+	background-color: white;
+	border: solid 1px #4BA5D9;
+	cursor: pointer;
+	text-align: center;
+	margin: 5px;
+	display: inline-block;
+}
+
+
+#checkButton {
+	margin: 0 auto;
+	width: 400px;
+	padding: 10px;
+	display: block;
+}
+
+
+#openButton, #resetButton, #editButton, #sendButton {
+	display: none;
+	visibility: hidden;
+}
+
+#closeButton {
+	border: none;
+	font-family: cursive, Helvetica Neue;
+	font-size: 30px;
+	padding-left: 0px;
+	background-color: beige;
+	border-radius: 5px;
+	width: 90px;
+	cursor: pointer;
+	opacity: 0.5;
+}
+
+#openButton:hover, #checkButton:hover, #resetButton:hover, #editButton:hover, #sendButton:hover {
+	background-color: #4BA5D9;
+	color: white;
+}
+
+#wrap {
+	display: none;
+	visibility: hidden;
+	height: 100%;
+	max-height: 100vh;
+	background: #4E5255;
+	overflow: auto;
+}
+
+#letter
+{
+	width: 100%;
+	display: block;
+}
+
+.statusMessage {
+	position: absolute;
+	margin: 0 auto;
+	display: inline-block;
+	color: #FEB648;
+	font-family: calibri;
+	font-size: 15px;
+	padding-left: 10px;
+}
+
+.statusMessage img {
+	width: 20px;
+	padding-right: 5px;
+	vertical-align: middle;
+}
+
+#sendStatusMessage {
+	margin-top: 232px;
+	margin-left: 621px;
+}
+
+#receiveStatusMessage {
+	display: block;
+	position: relative;
+	width: 400px;
+	text-align: center;
+	padding-top: 5px;
+}
+
+#vid {
+	position: absolute;
+	cursor: default;
+	bottom: 0;
+	opacity: 0;
+	z-index: -100;
+}
+
+#instructions {
+	/*color: #009633;*/
+	font-family: Helvetica Neue;
+	width: 390px;
+	padding: 15px;
+	height: 100%;
+	float: left;
+	font-weight: 300;
+	line-height: 20px;
+	display: none;
+}
+
+#intro {
+	font-size: 22px;
+	font-family: NightWindSentSample;
+	font-weight: 200;
+	padding-top: 10px;
+	margin-left: 10px;
+	line-height: 30px;
+	position: absolute;
+	overflow: hidden;
+	white-space: nowrap;
+	width: 0px;
+	display: none;
+	/*color: #4BA5D9;*/
+}
+
+.number{
+	font-size: 15px;
+	border: 1px solid black;
+	/*color: #009633;*/
+	padding: 5px 11px;
+	border-radius: 15px;
+	float: left;
+}
+
+.instruction {
+	margin-bottom: 20px;
+}
+
+.instructionText {
+	font-size: 17px;
+	display: block;
+	margin-left: 45px;
+	padding-top: 5px;
+}
+
+#icons {
+	position: absolute;
+	background-color: rgb(245, 250, 248);
+	border-radius: 6px;
+	display: none;
+	margin-top: 130px;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding: 10px 0px;
+	width: 875px;
+}
+
+#icons div {
+	float: left;
+	width: 130px;
+	text-align: center;
+	padding: 0px 7px;
+	cursor: pointer;
+
+}
+
+#icons p {
+	font-family: Helvetica Neue;
+	margin: 0;
+}
+
+#icons img {
+	width: 50px;
+}
+
+#icons input {
+	font-size: 15px;
+	width: 120px;
+	border: none;
+	text-align: center;
+	background: transparent;
+}
+
+#letterIcon {
+	cursor: pointer;
+}
+
+#sendIcon {
+	cursor: pointer;
+}
+
+#letterIconCaption {
+	color: inherit;
+	cursor: pointer;
+	word-wrap: break-word;
+	overflow: wrap;
+}
+
+#kukucodeIconCaption {
+	text-transform: lowercase;
+}
+
+#sendIconCaption {
+	cursor: pointer;
+}
+
+#ad {
+	margin-top: 80px;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+#help img{
+	display: none;
+}
+
+#help img{
+	z-index: 2;
+	position: absolute;
+}
+
+#kukucodeArrow {
+	margin-left: 32px;
+	margin-top: 220px;
+	width: 230px;
+}
+
+#pinArrow {
+	margin-top: 220px;
+	margin-left: 77px;
+	width: 400px;
+}
+
+#letterArrow {
+	width: 210px;
+	margin-top: 220px;
+	margin-left: 230px;
+}
+
+#musicArrow {
+	width: 300px;
+	margin-top: 20px;
+	margin-left: 420px;
+}
+
+#imageArrow {
+	width: 220px;
+	margin-top: 20px;
+	margin-left: 475px;
+}
+
+#toLabel, #fromLabel, #toggleOptionalInputs {
+	display: none;
+}
+
+#bottomPanel {
+	width: 100%;
+	background-color: #f0f0f0;
+	position: fixed;
+	bottom: 0;
+	border-top: 4px solid #4BA5D9;
+}
+
+#publicLetters {
+	width: 920px;
+	margin: 0 auto;
+	font-family: Helvetica Neue;
+	font-size: 10px;
+	color: gray;
+}
+
+#publicLetters p.sectionLabel {
+	width: 100%;
+	padding: 0px;
+	display: inline-block;
+	margin: 0;
+	margin-left: 5px;
+	text-align: center;
+
+}
+
+#publicLettersList {
+	list-style-type: none;
+	display: block;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 920px;
+}
+
+#publicLettersList li {
+    float: left;
+    /*padding: 25px;*/
+ 	margin-top: 0px;
+ 	height: 125px;
+    text-align: center;	
+}
+
+#publicLettersList li div {
+	background: url('../../img/empty_envelope.png') no-repeat bottom center;
+	width: 120px;
+	height: 50px;
+	margin-top: 3px;
+	background-size: contain;
+	float: left;
+}
+
+#publicLettersList li div p {
+	color: #4BA5D9;
+	font-weight: 500;
+	font-size: 15px;
+	font-family: Helvetica Neue;
+	cursor: pointer;
+}
+
+
+#sendScreenWrapper {
+	width: 900px;
+	height: 100px;
+	margin-top: 125px;
+	display: none;
+	position: absolute;
+	background: transparent;
+}
+
+#sendScreen {
+	display: block;	
+	height: 100%;
+	background-color: rgb(245, 250, 248);
+	font-family: Helvetica Neue;
+	border-radius: 6px;
+	padding: 10px 10px;
+	margin: 0 auto;
+	width: 380px;
+}
+
+#assignedLetterInfo {
+	width: 110px;
+	float: left;
+	font-size: 13px;
+}
+
+#finalSubmission {
+	margin-top: 30px;
+	font-size: 13px;
+	margin-left: 25px;
+	float: left;
+	display: none;
+}
+
+#finalSendButton {
+	font-family: Helvetica Neue;
+	font-size: 15px;
+	padding: 8px 12px;
+	border: none;
+	border-radius: 6px;
+	color: #009633;
+	background-color: white;
+	border: solid 1px #009633;
+	cursor: pointer;
+	text-align: center;
+	display: inline-block;
+	width: 145px;
+}
+
+#finalSendButton:hover {
+	color: white;
+	background-color: #009633;
+}
+
+#assignedLetterInfo .smallCapsLabel {
+	font-size: 13px;
+	font-weight: 300;
+}
+
+#assignedLetterInfo div {
+	font-size: 18px;
+	color: #009633;
+	margin-bottom: 3px;
+
+}
+
+#promptPublicLetter {
+
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+/* .squaredThree */
+.squaredThree {
+  width: 15px;
+  position: relative;
+  margin: 0 auto;
+  float: left;
+}
+.squaredThree label {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  position: absolute;
+  vertical-align: middle;
+  left: 0;
+  background: #009633;
+  background: #009633;
+  border-radius: 4px;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.4);
+}
+.squaredThree label:after {
+  content: '';
+  width: 7px;
+  height: 4px;
+  position: absolute;
+  top: 3px;
+  left: 2.5px;
+  border: 3px solid #fcfff4;
+  border-top: none;
+  border-right: none;
+  background: transparent;
+  opacity: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.squaredThree label:hover::after {
+  opacity: 0.3;
+}
+.squaredThree input[type=checkbox] {
+  visibility: hidden;
+}
+.squaredThree input[type=checkbox]:checked + label:after {
+  opacity: 1;
+}
+
+#finalSubmission p {
+	line-height: 14px;
+	margin: 0 10px;
+	padding: 0;
+	float: left;
+	width: 200px;
+	display: inline-block;
+	height: 20px;
+	vertical-align: bottom;
+}
+
+/* end .squaredThree */

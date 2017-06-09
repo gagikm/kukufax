@@ -1,0 +1,169 @@
+doctype default
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, user-scalable=0")
+    meta(name="description", content="")
+    meta(name="author", content="")
+    title="KukuFax"
+    link(href="../static/bootstrap/css/style.css", rel="stylesheet")
+    link(rel='shortcut icon', href='../static/img/icon.png', type='image/x-icon')
+    script(src="../static/jquery/jquery.js")
+    script(src='../static/bootstrap/js/filereader.js')
+    <!-- script(src="http://intridea.github.io/sketch.js/lib/sketch.js") -->
+    script(src='../static/bootstrap/js/aux.js')
+    script(src='../static/bootstrap/js/script.js')
+
+  body
+    #close
+      input#closeButton(type='button', value='close', onclick='closeLetter(this)')
+
+    #topbar
+      #topnavbar
+        a#logo(href='/') 
+          img(src='../static/img/mainlogo.png', alt='logo')
+        #topSendNav(class="navButton")
+          |send
+        #topReceiveNav(class="navButton")
+          |receive
+
+    #envelope
+      #sendScreenWrapper
+        #sendScreen
+          #assignedLetterInfo
+            #kcwrap
+              span(class="smallCapsLabel") KUKUCODE
+              #assignedKukucode kukucodeHere
+            #pinwrap
+              span(class="smallCapsLabel") PIN
+              #assignedPin pinHere
+          #finalSubmission
+            #publicBox(class='squaredThree')
+              input#promptPublicLetter(type='checkbox' value='None' name='check' )
+              label(for="promptPublicLetter")
+            p This is a public letter
+            br
+            input#finalSendButton(type='button', value='send', onclick='submitLetter()')
+      #navbar
+        #toggleOptionalInputs Show optional inputs
+        #senderInfo
+          #fromLabel From:
+          #senderName
+          #senderDateOrAddress
+          #senderCity
+        img#stamp(src='../static/img/bearstamp.jpg', alt='stamp')
+
+      #intro
+          |Send and receive handwritten letters online.
+      #instructions
+        div(class="instruction")
+          span(class="number") 1
+          span(class="instructionText" id="instruction1") Assign unique kukucode and a pin.
+          br
+        div(class="instruction")
+          span(class="number") 2
+          span(class="instructionText" id="instruction2") Attach your letter as an image or pdf.
+          br
+        div(class="instruction")
+          span(class="number") 3
+          span(class="instructionText") #[span#musicInstruction  Add music], #[span#photoInstruction background photo], and #[span#envelopeInstruction envelope information].
+          br
+        div(class="instruction")
+          span(class="number") 4
+          span(class="instructionText" id="instruction4") Send your kukufax and share the kukucode!
+          br
+        
+
+      form#receive(action='#')
+        label(for="receiveKukucode")
+        input#receiveKukucode(type='text', name='receiveKukucode', placeholder='enter kukucode', autocomplete='off', maxlength='15')
+        input#receivePin(type='password', name='receivePin', placeholder='enter pin', autocomplete='off', maxlength='5')
+        #envelopeInfo(class='envelopeBottom')
+          #toLabel To:
+          #name
+          #address1
+          #address2
+        input#checkButton(type='submit', value='receive')
+        input#openButton(type='button', value='open', onclick='expandLetter(this)')
+        input#resetButton(type='button', value='reset', onclick='resetPage()')
+        input#editButton(type='button', value='edit', onclick='closePreview()')
+        input#sendButton(type='button', value='send', onclick='submitLetter()')
+        div#receiveStatusMessage(class='statusMessage') 
+
+      #help
+          img#kukucodeArrow(src='../static/img/arrows/kukucodearrow.png')
+          img#pinArrow(src='../static/img/arrows/pinArrow.png')
+          img#letterArrow(src='../static/img/arrows/letterArrow.png') 
+          img#musicArrow(src='../static/img/arrows/musicArrow.png') 
+          img#imageArrow(src='../static/img/arrows/imageArrow.png')
+
+      #icons
+        #kukucodeIcon
+          img(src='../static/img/send_icons/kukucodeIcon.png', alt='kukucode icon')
+          input#kukucodeIconCaption(type='text', name='kukucodeIconCaption', placeholder='kukucode', autocomplete='off', maxlength='15')
+        #pinIcon
+          img(src='../static/img/send_icons/pinIcon.png', alt='pin icon')
+          input#pinIconCaption(type='password', name='pinIconCaption', placeholder='pin', autocomplete='off', maxlength='5')
+        #letterIcon
+          img(src='../static/img/send_icons/letterIcon.png', alt='letter icon')
+          input#letterIconCaption(type='text', name='letterIconCaption', placeholder='letter', autocomplete='off', maxlength='5', onfocus='this.blur()', readonly)
+        #musicIcon
+          img(src='../static/img/send_icons/musicIcon.png', alt='music icon')
+          input#musicIconCaption(type='text', name='musicIconCaption', placeholder='youtube link', autocomplete='off')
+        #imageIcon
+          img(src='../static/img/send_icons/imageIcon.png', alt='image icon')
+          input#imageIconCaption(type='text', name='imageIconCaption', placeholder='image link', autocomplete='off')
+        #sendIcon
+          img(src='../static/img/send_icons/sendIcon.png', alt='send icon')
+          input#sendIconCaption(type='text', name='imageIconCaption', value='preview & send', autocomplete='off', onfocus='this.blur()', readonly)
+          
+      #sendStatusMessage(class='statusMessage')
+
+      
+      form#send(action='#' enctype="multipart/form-data")
+        #senderInputs
+          label(for="fromName")
+            input#fromName(type='text', name='fromName', placeholder="your name", autocomplete='off')
+          label(for="fromAddress")
+            input#fromAddress(type='text', name='fromAddress', placeholder="date or your address", autocomplete='off', class='optional')
+          label(for="fromLocation")
+            input#fromLocation(type='text', name='fromLocation', placeholder='your city, state', autocomplete='off')
+        #letterInfo
+            label(for="sendKukucode")
+              input#sendKukucode(type='text', name='sendKukucode', placeholder='kukucode', autocomplete='off', maxlength='15')
+            label(for="sendPin")
+              input#sendPin(type='text', name='sendPin', placeholder='pin', autocomplete='off', maxlength='5', class='optional')
+            label(for="uploadedFile")
+              input#uploadedFile(type='file', name='uploadedFile', accept='image/*, application/pdf', autocomplete='off')
+            label(for="mobileUploadButton")
+              input#mobileUploadButton(value='insert letter', type='button')
+            label(for="youtubeLink")
+              input#youtubeLink(type='text', name='youtubeLink', placeholder='music youtube URL', autocomplete='off', class='optional')
+            label(for="bgLink")
+              input#bgLink(type='text', name='bgLink', placeholder="background photo URL", autocomplete='off', class='optional')
+        #recipientInputs
+          label(for="sendName")
+            input#sendName(type='text', name='sendName', placeholder='recipient name', autocomplete='off')
+          label(for="sendDate")
+            input#sendDate(type='text', name='sendDate', placeholder='recipient address', autocomplete='off', class='optional')
+          label(for="sendLocation")
+            input#sendLocation(type='text', name='sendLocation', placeholder='recipient city, state', autocomplete='off'  )
+        input#submitLetter(type='submit' value='Verify & Send') 
+      #wrap
+        object#letter(data='#')
+          param(name='autoplay', value='false')
+          param(name='autostart', value='0')
+    iframe#vid(width="900" height="36" src="https://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1" frameborder="0")
+    #bottomPanel
+      #publicLetters
+        p(class="sectionLabel") PUBLIC LETTERS
+        ul#publicLettersList
+
+    
+    //-
+      #ad
+        script(async='', src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+        ins.adsbygoogle(style='display:block', data-ad-client='ca-pub-1945780898390297', data-ad-slot='9850305963', data-ad-format='auto')
+        script.
+          (adsbygoogle = window.adsbygoogle || []).push({});
+

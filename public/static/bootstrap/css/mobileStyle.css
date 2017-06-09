@@ -1,0 +1,286 @@
+html {
+	height: 100vh;
+}
+
+#navbar {
+	padding: 0px;
+	padding-top: 10px;
+}
+
+#topbar, #topnavbar {
+	width: 100%;
+}
+
+
+
+#vid {
+	display: none;
+}
+
+#mobileHeader {
+	margin-bottom: 1px;
+	height: 100px;
+}
+
+#logo {
+	padding-left: 10px;
+}
+
+#mobileStamp {
+	width: 45%;
+	margin-right: 5px;
+	margin-top: 5px;
+	float: right;
+}
+
+#mobileNavs {
+	width: 100%;
+	height: 50px;
+}
+
+#mobileReceiveNav, #mobileSendNav {
+	width: 50%;
+	float: left;
+	font-family: Helvetica Neue;
+	text-align: center;
+	font-size: 18px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	cursor: pointer;
+}
+
+#mobileReceiveNav {
+	opacity: 0.5;
+	color: #4BA5D9;
+	border-bottom: 1px solid transparent;
+}
+
+#mobileSendNav {
+	opacity: 1;
+	color: #009633;
+	border-bottom: 1px solid #009633;
+}
+
+#envelope {
+
+	height: auto;
+	min-height: 450px;
+	width: 100%;
+	margin-top: 50px;
+	margin-bottom: 5px;
+	border-color: white;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+#icons {
+	display: none;
+}
+#receive {
+	text-align: center;
+	margin-left: 0px;
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+
+#address1, #address2, #name {
+	font-size: 25px	;
+	width: auto;
+	padding-left: 0px;
+}
+
+#receiveKukucode {
+	font-size: 20px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	width: 90%;
+	display: inline-block;
+	text-align: center;
+	margin-bottom: 15px;
+	background-color: #f5f8fa;
+	border-radius: .35rem;
+	height: 50px;
+	color: #4BA5D9;
+}
+
+#receivePin {
+	width: 100%;
+	text-align: center;
+}
+
+#checkButton, #openButton, #resetButton {
+	border-radius: .35rem;
+	width: 90%;
+	height: 50px;
+}
+
+#send {
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 100px;
+	width: 100%;
+	height: auto;
+}
+
+#send input[type="text"], #mobileUploadButton {
+	padding-left: 10px;
+	color: black;
+	font-family: Helvetica Neue;
+	font-size: 16px;
+	line-height: 20px;
+	width: 100%;
+	border:none;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	margin-top: 0px;
+	background-color: #f5f8fa;
+	border-radius: .35rem;
+	height: 50px;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+#mobileUploadButton {
+	text-align: left;
+	color: black;
+	cursor: pointer;
+	float: left;
+	font-weight: 300;
+
+}
+
+#send div {
+	float: none;
+	margin: 0 auto;
+}
+
+#senderInputs {
+	width: 90%;
+}
+
+#recipientInputs {
+	width: 90%;
+	margin: auto;
+}
+
+#letterInfo {
+	width: 90%;
+	position: relative;
+	margin-top: auto;
+}
+
+
+#sendKukucode {
+	font-family: lucida console;
+	font-size: 18px;
+	color: #009633;
+	display: block;
+}
+
+#codeAndFile {
+	margin: 0 auto;
+	width:90%;
+}
+
+#recipientDetails {
+	width:90%;
+	margin: 0 auto;
+}
+
+#sendPin, #bgLink {
+	margin-left: 0px;
+}
+
+#senderInfo {
+	margin-top: 20px;
+	padding: 10px;	
+	font-size: 25px;
+	z-index: 3;
+}
+
+#envelopeInfo {
+	display: none;
+	font-size: 15px;
+	margin-bottom: 10px;
+	margin-top: 160px;
+	/*margin-left: 80px;*/
+	text-align: left;
+	padding: 10px;
+}
+
+#submitLetter {
+	margin-top: 15px;
+	margin-bottom: 10px;
+	background-color: white;
+	color: #009633;
+	background-repeat: no-repeat;
+	background-image: none;
+	box-shadow: none;
+	font-size: 15px;
+	font-weight: normal;
+	padding: 4px 12px;
+	border-radius: 6px;
+	border: 1px solid #009633;;
+	cursor: pointer;
+	width: 90%;
+	height: 50px	;
+	text-align: center;
+}
+
+#sendStatusMessage, #receiveStatusMessage {
+	width: 90%;
+	margin: 0px;
+	display: block;
+	font-size: 20px;
+	text-align:center;
+	padding-top: 15px;
+}
+
+#sendStatusMessage {
+	margin-top: 490px;
+	display: none;
+}
+#instructions, #intro {
+	display:none;
+}
+
+.optional {
+	display: none !important;
+}
+
+#ad {
+	margin: 0;
+	background-color: white;
+}
+
+#toLabel, #fromLabel {
+	font-family: Helvetica Neue;
+	font-size: 15px;
+	display: block;
+}
+
+#toggleOptionalInputs {
+	position: absolute;
+	padding: 10px;
+	font-size: 15px;
+	margin: 15px;
+	font-family: Helvetica Neue;
+	z-index: 3;
+	border-radius: 6px;
+	border: 1px solid #009633;
+	color: #009633;
+	background: white;
+	cursor: pointer;
+}
+
+
+#publicLetters {
+	width: 100%;
+}
+
+#publicLettersList {
+    overflow-x: auto;
+    overflow-y: hidden;
+}

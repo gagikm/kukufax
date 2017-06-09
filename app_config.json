@@ -1,0 +1,7 @@
+{ 
+  "AWS_REGION": "us-west-2",
+  "AWS_ACCESS_KEY_ID": "AKIAJ6LRNOQWBMBA5UVA",
+  "AWS_SECRET_ACCESS_KEY": "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",
+  "STARTUP_SIGNUP_TABLE": "kukufiles",
+  "NEW_SIGNUP_TOPIC": "arn:aws:sns:us-west-2:271019773327:signup-notifications"
+}
