@@ -229,12 +229,13 @@ switchToSend = function() {
     $("#letterInfo").show();
     $("#submitLetter").show();
     $("#toggleOptionalInputs").show();
-    closeBottomPanel();
   }
   $("#topbar").css('background-color', '#009633');
   $("#topReceiveNav").css('border-bottom', 'none');
   $("#topSendNav").css('border-bottom', '2px solid white');
   clearStatusMessages();
+  closeBottomPanel();
+  $("#bottomPanel").css('border-top', '4px solid #009633')
 }
 
 switchToSendMobile = function() {
@@ -258,10 +259,11 @@ switchToReceive = function() {
   $("#senderCity").html("");
   if (isMobile) {
     $("#toggleOptionalInputs").hide();
-    openBottomPanel();
   } else {
     $("#intro").show();
   }
+  openBottomPanel();
+  $("#bottomPanel").css('border-top', '4px solid #4BA5D9')
 }
 
 switchToReceiveMobile = function() {
@@ -305,7 +307,6 @@ showInfo = function() {
 }
 
 hideInfo = function() {
-  openBottomPanel();
   $('#receiveKukucode').show();
   $('#receivePin').val("");
   $('#receivePin').hide();
@@ -582,6 +583,7 @@ closeLetter = function(form) {
 resetPage = function() {
   switchToReceive();
 	hideInfo();
+  openBottomPanel();
   $('html').css('background-image',"");
   $("#checkButton").val("receive");
 }
