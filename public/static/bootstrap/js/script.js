@@ -589,7 +589,9 @@ resetPage = function() {
 }
 
 updateUserInfo = function(name, fileName, location, date, senderName, senderDateOrAddress, senderCity, youtubeVid, bgImageLink, preview) {
-	document.getElementById('name').innerHTML = name;
+  if (bgImageLink) {
+      $('html').css('background-image','url("' + bgImageLink +'")');
+    }
 	
   if (date) {
     document.getElementById('address1').innerHTML = date;
@@ -618,9 +620,7 @@ updateUserInfo = function(name, fileName, location, date, senderName, senderDate
     document.getElementById('senderCity').innerHTML = "";
   }
 
-  if (bgImageLink) {
-      $('html').css('background-image','url("' + bgImageLink +'")');
-    }
+  document.getElementById('name').innerHTML = name;
 
   if (!isMobile) {
     if (preview) {
