@@ -381,7 +381,7 @@ closeBottomPanel = function() {
 }
 
 openBottomPanel = function() {
-  $('#bottomPanel').animate({height: "70px"}, 1000);
+  $('#bottomPanel').animate({height: "72px"}, 1000);
 }
 
 // On receive side, validate kukucode to make sure it exists then retrieve letter and info
@@ -581,10 +581,10 @@ closeLetter = function(form) {
 }
 
 resetPage = function() {
+  $('html').css('background-image',"");
   switchToReceive();
 	hideInfo();
   openBottomPanel();
-  $('html').css('background-image',"");
   $("#checkButton").val("receive");
 }
 

@@ -576,6 +576,7 @@ input {
 #publicLetters p.sectionLabel {
 	width: 100%;
 	padding: 0px;
+	padding-top: 2px;
 	display: inline-block;
 	margin: 0;
 	margin-left: 5px;
