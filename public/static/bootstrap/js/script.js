@@ -521,6 +521,8 @@ checkAndSubmit = function(event) {
 
 expandLetter = function(form) {
   if (isMobile) {
+    alert("Please use the desktop site to open this letter!");
+    return;
     $('#ad').fadeOut(200);
     $('#navbar').fadeOut(200);
     $('#receive').fadeOut(200);
